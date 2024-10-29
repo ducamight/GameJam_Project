@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
     // Gọi từ HoleController khi một viên bi rơi vào lỗ
     public void OnBallEnterHole(GameObject ball, HoleController hole)
     {
+        hole.anim.SetBool("Eat", true);
         ballFellIntoHole = true;
         ball.SetActive(false); // Ẩn viên bi khi rơi vào lỗ
 
