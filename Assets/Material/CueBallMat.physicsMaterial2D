@@ -6,6 +6,6 @@ PhysicsMaterial2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BallMat
+  m_Name: CueBallMat
   friction: 0.01
-  bounciness: 1.1
+  bounciness: 1
