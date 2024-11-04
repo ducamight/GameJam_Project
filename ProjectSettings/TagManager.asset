@@ -11,6 +11,7 @@ TagManager:
   - YellowBall
   - OrangeBall
   - CueBall
+  - Table
   layers:
   - Default
   - TransparentFX

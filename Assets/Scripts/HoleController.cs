@@ -9,6 +9,8 @@ public class HoleController : MonoBehaviour
     private Camera mainCamera; // Tham chiếu tới camera chính
     public float shakeDuration = 0.5f; // Thời gian lắc camera
     public float shakeMagnitude = 0.2f; // Độ mạnh của hiệu ứng lắc
+    public AudioSource audioSource;
+    public AudioClip audioClip;
 
     private Vector3 originalCameraPosition; // Vị trí ban đầu của camera
     private bool isShaking = false; // Biến kiểm tra trạng thái lắc camera
@@ -20,13 +22,16 @@ public class HoleController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Khi viên bi rơi vào lỗ, gọi GameManager để xử lý
+        if (audioSource != null && audioClip != null)
+        {
+            audioSource.PlayOneShot(audioClip);
+        }
         GameManager.Instance.OnBallEnterHole(collision.gameObject, this);
     }
 
     public void HoleTriggerAnimation()
     {
         anim.SetBool("Eat", false);
-
     }
 
     // Hàm gọi từ Animator để thực hiện hiệu ứng lắc camera
